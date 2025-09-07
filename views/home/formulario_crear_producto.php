@@ -7,24 +7,28 @@
 <body>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
-<h1>Lista de Productos</h1> 
-<a href="index.php?controller=home&action=crear_producto" class="btn btn-primary">Crear Producto</a>
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Producto</th>
-      <th scope="col">Precio</th>
-    </tr>
-  </thead>
-<tbody>
-<?php
-foreach($products as $p): ?>
-    <tr>
-      <td><?= $p['nombre']?></td>
-      <td><?= $p['pvp']?></td>
-    </tr> 
-<?php endforeach; ?>
-</tbody>
-</table>
+<h1>Crear Formulario</h1> 
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+     
+    </div>
+    <div class="col-sm">
+<form method="POST" action="index.php?controller=home&action=guardar_producto">
+  <label for="exampleFormControlInput1" class="form-label">Producto</label>
+  <input type="text" name="nombre" class="form-control" id="exampleFormControlInput1">
+  <label for="exampleFormControlTextarea1" class="form-label">Precio</label>
+   <input type="number" name="precio" class="form-control" id="exampleFormControlInput1">
+   <button type="submit" class="btn btn-primary">Registar</button>
+
+</form>
+    </div>
+    <div class="col-sm">
+    
+    </div>
+  </div>
+</div>
 </body>
 </html>

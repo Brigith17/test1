@@ -6,4 +6,17 @@ class HomeController {
         $products = Product::getAll();
         require_once '../views/home/index.php';
     }
+
+     public function crear_producto(){
+        require_once '../views/home/formulario_crear_producto.php';
+    }
+    
+     public function guardar_producto(){
+        var_dump($_POST);
+    
+         $nombre = $_POST['nombre'];
+        $precio = $_POST['precio'];
+        Product::crear($nombre, $precio);
+        header("Location: index.php?controller=home&action=index");
+    }
 }

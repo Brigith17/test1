@@ -12,9 +12,7 @@ class HomeController {
     }
     
      public function guardar_producto(){
-        var_dump($_POST);
-    
-         $nombre = $_POST['nombre'];
+        $nombre = $_POST['nombre'];
         $precio = $_POST['precio'];
         Product::crear($nombre, $precio);
         header("Location: index.php?controller=home&action=index");
